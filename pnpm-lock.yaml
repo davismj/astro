@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: false
+  excludeLinksFromLockfile: false
 
 overrides:
   tsconfig-resolver>type-fest: 3.0.0
@@ -3740,6 +3744,37 @@ importers:
       astro:
         specifier: workspace:*
         version: link:../../../../../astro
+
+  packages/integrations/fast:
+    dependencies:
+      '@microsoft/fast-element':
+        specifier: ^2.0.0-beta.1
+        version: 2.0.0-beta.1
+      '@microsoft/fast-ssr':
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(@microsoft/fast-element@2.0.0-beta.1)
+      parse5:
+        specifier: ^7.1.2
+        version: 7.1.2
+    devDependencies:
+      astro:
+        specifier: workspace:*
+        version: link:../../astro
+      astro-scripts:
+        specifier: workspace:*
+        version: link:../../../scripts
+      chai:
+        specifier: ^4.3.6
+        version: 4.3.7
+      cheerio:
+        specifier: ^1.0.0-rc.11
+        version: 1.0.0-rc.11
+      mocha:
+        specifier: ^9.2.2
+        version: 9.2.2
+      sass:
+        specifier: ^1.52.2
+        version: 1.52.2
 
   packages/integrations/image:
     dependencies:
@@ -8137,6 +8172,20 @@ packages:
       - supports-color
     dev: false
 
+  /@microsoft/fast-element@2.0.0-beta.1:
+    resolution: {integrity: sha512-eJRWLkDkZiIPe6UcvEnPfVlRZ12xvaXpZifoGRJWZgDSD9p58qRVrF42OjCdmsbzXD+xD6ZyFbjpgLXEKE9c4A==}
+    dev: false
+
+  /@microsoft/fast-ssr@1.0.0-beta.2(@microsoft/fast-element@2.0.0-beta.1):
+    resolution: {integrity: sha512-AdUp2WhfShY5hvlDkafV6M++M8fU8Yxu2cCgDDuBYxlVPGxIjGfORCfQHySwHj6zqM9D1RJXZyrgnGVE70by9A==}
+    peerDependencies:
+      '@microsoft/fast-element': ^2.0.0-beta.1
+    dependencies:
+      '@microsoft/fast-element': 2.0.0-beta.1
+      parse5: 6.0.1
+      tslib: 2.5.0
+    dev: false
+
   /@miniflare/cache@2.14.0:
     resolution: {integrity: sha512-0mz0OCzTegiX75uMURLJpDo3DaOCSx9M0gv7NMFWDbK/XrvjoENiBZiKu98UBM5fts0qtK19a+MfB4aT0uBCFg==}
     engines: {node: '>=16.13'}
@@ -10277,7 +10326,6 @@ packages:
       loupe: 2.3.6
       pathval: 1.1.1
       type-detect: 4.0.8
-    dev: false
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -10536,7 +10584,7 @@ packages:
     dev: false
 
   /concat-map@0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   /concordance@5.0.4:
     resolution: {integrity: sha512-OAcsnTEYu1ARJqWVGwf4zh4JDfHZEaSNlNccFmt8YjB2l/n19/PF2viLINHc57vO4FKIAFl2FWASIGZZWZ2Kxw==}
@@ -10849,7 +10897,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       type-detect: 4.0.8
-    dev: false
 
   /deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
